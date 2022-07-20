@@ -29,7 +29,7 @@ export const offers : Offers = [
     ],
     title: 'Penthouse, 4-5 rooms + 5 balconies',
     isFavorite: false,
-    isPremium: false,
+    isPremium: true,
     rating: 4.1,
     type: 'hotel',
     bedrooms: 2,
@@ -82,7 +82,7 @@ export const offers : Offers = [
       'https://10.react.pages.academy/static/hotel/4.jpg'
     ],
     title: 'Nice, cozy, warm big bed apartment',
-    isFavorite: false,
+    isFavorite: true,
     isPremium: false,
     rating: 3.3,
     type: 'house',
