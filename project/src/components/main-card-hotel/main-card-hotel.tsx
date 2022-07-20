@@ -3,11 +3,12 @@ import {Link} from 'react-router-dom';
 
 type OfferType = {
  offer:Offer;
+ onMouseEnter: (id:number) => void;
 }
 
-function MainCardHotel({offer}:OfferType) : JSX.Element{
+function MainCardHotel({offer,onMouseEnter}:OfferType) : JSX.Element{
   return (
-    <article className="cities__card place-card">
+    <article className="cities__card place-card" onMouseEnter={()=> onMouseEnter(offer.id)}>
       <div className="place-card__mark">
         <span>Premium</span>
       </div>

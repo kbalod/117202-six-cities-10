@@ -9,9 +9,16 @@ type OfferScreenProps = {
 
 
 function MainCardHotelList({offers}:OfferScreenProps) : JSX.Element {
+  const [activeCard,setActiveCard] = useState(1);
+
+  const handlerOnFocus = (id:number) => {
+    setActiveCard(id);
+    console.log(activeCard);
+  };
   return(
     <>
-      {offers.map((offer)=> <MainCardHotel key={offer.id} offer={offer} />)}
+      {offers.map((offer)=>
+        (<MainCardHotel key={offer.id} offer={offer} onMouseEnter={handlerOnFocus}/>))}
     </>
   );
 }
