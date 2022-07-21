@@ -1,4 +1,5 @@
-import { FormComment } from '../../components/form-comment/form-comment';
+import { Link } from 'react-router-dom';
+import FormComment from '../../components/form-comment/form-comment';
 
 function RoomScreen () {
   return(
@@ -7,21 +8,24 @@ function RoomScreen () {
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <link className="header__logo-link" href="main.html"/>
-              <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"/>
+              <Link to={'/'} className="header__logo-link">
+                <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"/>
+              </Link>
             </div>
             <nav className="header__nav">
               <ul className="header__nav-list">
                 <li className="header__nav-item user">
-                  <link className="header__nav-link header__nav-link--profile" href="#"/>
-                  <div className="header__avatar-wrapper user__avatar-wrapper">
-                  </div>
+                  <Link to={'#'} className="header__nav-link header__nav-link--profile">
+                    <div className="header__avatar-wrapper user__avatar-wrapper">
+                    </div>
+                  </Link>
                   <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
                   <span className="header__favorite-count">3</span>
                 </li>
                 <li className="header__nav-item">
-                  <link className="header__nav-link" href="#"/>
-                  <span className="header__signout">Sign out</span>
+                  <Link to={'#'} className="header__nav-link">
+                    <span className="header__signout">Sign out</span>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -186,9 +190,9 @@ function RoomScreen () {
             <div className="near-places__list places__list">
               <article className="near-places__card place-card">
                 <div className="near-places__image-wrapper place-card__image-wrapper">
-                  <link href="#"/>
-                  <img className="place-card__image" src="img/room.jpg" width="260" height="200" alt="Place"/>
-
+                  <Link to={'#'}>
+                    <img className="place-card__image" src="img/room.jpg" width="260" height="200" alt="Place"/>
+                  </Link>
                 </div>
                 <div className="place-card__info">
                   <div className="place-card__price-wrapper">
@@ -210,7 +214,7 @@ function RoomScreen () {
                     </div>
                   </div>
                   <h2 className="place-card__name">
-                    <link href="#"/>Wood and stone place
+                    <Link to={'#'}/>Wood and stone place
                   </h2>
                   <p className="place-card__type">Private room</p>
                 </div>
@@ -218,9 +222,9 @@ function RoomScreen () {
 
               <article className="near-places__card place-card">
                 <div className="near-places__image-wrapper place-card__image-wrapper">
-                  <link href="#"/>
-                  <img className="place-card__image" src="img/apartment-02.jpg" width="260" height="200" alt="Place"/>
-
+                  <Link to={'#'}>
+                    <img className="place-card__image" src="img/apartment-02.jpg" width="260" height="200" alt="Place"/>
+                  </Link>
                 </div>
                 <div className="place-card__info">
                   <div className="place-card__price-wrapper">
@@ -242,7 +246,7 @@ function RoomScreen () {
                     </div>
                   </div>
                   <h2 className="place-card__name">
-                    <link href="#"/>Canal View Prinsengracht
+                    <Link to={'#'}/>Canal View Prinsengracht
                   </h2>
                   <p className="place-card__type">Apartment</p>
                 </div>
@@ -253,8 +257,9 @@ function RoomScreen () {
                   <span>Premium</span>
                 </div>
                 <div className="near-places__image-wrapper place-card__image-wrapper">
-                  <link href="#"/>
-                  <img className="place-card__image" src="img/apartment-03.jpg" width="260" height="200" alt="Place"/>
+                  <Link to={'#'}>
+                    <img className="place-card__image" src="img/apartment-03.jpg" width="260" height="200" alt="Place"/>
+                  </Link>
                 </div>
                 <div className="place-card__info">
                   <div className="place-card__price-wrapper">
@@ -276,7 +281,7 @@ function RoomScreen () {
                     </div>
                   </div>
                   <h2 className="place-card__name">
-                    <link href="#"/>Nice, cozy, warm big bed apartment
+                    <Link to={'#'}/>Nice, cozy, warm big bed apartment
                   </h2>
                   <p className="place-card__type">Apartment</p>
                 </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import FavoriteList from '../../components/favorite-list/favorite-list';
 import { Offers } from '../../types/offers';
 
@@ -12,21 +13,24 @@ function FavoritesScreen ({offers}:OffersType){
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <link className="header__logo-link" href="main.html"/>
-              <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"/>
+              <Link to={'/'} className="header__logo-link">
+                <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"/>
+              </Link>
             </div>
             <nav className="header__nav">
               <ul className="header__nav-list">
                 <li className="header__nav-item user">
-                  <link className="header__nav-link header__nav-link--profile" href="#"/>
-                  <div className="header__avatar-wrapper user__avatar-wrapper">
-                  </div>
+                  <Link to={'#'} className="header__nav-link header__nav-link--profile">
+                    <div className="header__avatar-wrapper user__avatar-wrapper">
+                    </div>
+                  </Link>
                   <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
                   <span className="header__favorite-count">3</span>
                 </li>
                 <li className="header__nav-item">
-                  <link className="header__nav-link" href="#"/>
-                  <span className="header__signout">Sign out</span>
+                  <Link to={'#'} className="header__nav-link">
+                    <span className="header__signout">Sign out</span>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -43,7 +47,7 @@ function FavoritesScreen ({offers}:OffersType){
         </div>
       </main>
       <footer className="footer container">
-        <link className="footer__logo-link" href="main.html"/>
+        <Link to={'/'} className="footer__logo-link"/>
         <img className="footer__logo" src="img/logo.svg" alt="6 cities logo" width="64" height="33"/>
       </footer>
     </div>

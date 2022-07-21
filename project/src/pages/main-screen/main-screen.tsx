@@ -1,4 +1,4 @@
-//import { Comments } from '../../types/comments';
+import { Link } from 'react-router-dom';
 import { Offers} from '../../types/offers';
 import {MainCardHotelList} from '../../components/main-card-hotel-list/main-card-hotel-list';
 
@@ -14,24 +14,25 @@ function MainScreen({offers}:OfferScreenProps) : JSX.Element {
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <link className="header__logo-link header__logo-link--active"/>
-              <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"/>
-
+              <Link to={'/'} className="header__logo-link header__logo-link--active">
+                <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"/>
+              </Link>
             </div>
             <nav className="header__nav">
               <ul className="header__nav-list">
                 <li className="header__nav-item user">
-                  <link className="header__nav-link header__nav-link--profile" href="#"/>
-                  <div className="header__avatar-wrapper user__avatar-wrapper">
-                  </div>
+                  <Link to={'/'} className="header__nav-link header__nav-link--profile">
+                    <div className="header__avatar-wrapper user__avatar-wrapper">
+                    </div>
+                  </Link>
                   <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
                   <span className="header__favorite-count">3</span>
 
                 </li>
                 <li className="header__nav-item">
-                  <link className="header__nav-link" href="#"/>
-                  <span className="header__signout">Sign out</span>
-
+                  <Link to={'/'} className="header__nav-link">
+                    <span className="header__signout">Sign out</span>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -45,34 +46,34 @@ function MainScreen({offers}:OfferScreenProps) : JSX.Element {
           <section className="locations container">
             <ul className="locations__list tabs__list">
               <li className="locations__item">
-                <link className="locations__item-link tabs__item" href="#"/>
-                <span>Paris</span>
-
+                <Link to={'/'} className="locations__item-link tabs__item">
+                  <span>Paris</span>
+                </Link>
               </li>
               <li className="locations__item">
-                <link className="locations__item-link tabs__item" href="#"/>
-                <span>Cologne</span>
-
+                <Link to={'/'} className="locations__item-link tabs__item">
+                  <span>Cologne</span>
+                </Link>
               </li>
               <li className="locations__item">
-                <link className="locations__item-link tabs__item" href="#"/>
-                <span>Brussels</span>
-
+                <Link to={'/'} className="locations__item-link tabs__item">
+                  <span>Brussels</span>
+                </Link>
               </li>
               <li className="locations__item">
-                <link className="locations__item-link tabs__item tabs__item--active"/>
-                <span>Amsterdam</span>
-
+                <Link to={'/'} className="locations__item-link tabs__item tabs__item--active">
+                  <span>Amsterdam</span>
+                </Link>
               </li>
               <li className="locations__item">
-                <link className="locations__item-link tabs__item" href="#"/>
-                <span>Hamburg</span>
-
+                <Link to={'/'} className="locations__item-link tabs__item">
+                  <span>Hamburg</span>
+                </Link>
               </li>
               <li className="locations__item">
-                <link className="locations__item-link tabs__item" href="#"/>
-                <span>Dusseldorf</span>
-
+                <Link to={'/'} className="locations__item-link tabs__item">
+                  <span>Dusseldorf</span>
+                </Link>
               </li>
             </ul>
           </section>

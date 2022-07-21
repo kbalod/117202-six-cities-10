@@ -9,7 +9,7 @@ type OfferScreenProps = {
 
 
 function MainCardHotelList({offers}:OfferScreenProps) : JSX.Element {
-  const [activeCard,setActiveCard] = useState(1);
+  const [activeCard,setActiveCard] = useState(0);
 
   const handlerOnFocus = (id:number) => {
     setActiveCard(id);

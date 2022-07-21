@@ -14,8 +14,9 @@ function FavoritePlace({offer}:OfferType) {
           <span>Premium</span>
         </div>}
       <div className="favorites__image-wrapper place-card__image-wrapper">
-        <Link to={`/offer/${offer.id}`}/>
-        <img className="place-card__image" src={offer.previewImage} width="150" height="110" alt="Place"/>
+        <Link to={`/offer/${offer.id}`}>
+          <img className="place-card__image" src={offer.previewImage} width="150" height="110" alt="Place"/>
+        </Link>
       </div>
       <div className="favorites__card-info place-card__info">
         <div className="place-card__price-wrapper">
@@ -36,9 +37,11 @@ function FavoritePlace({offer}:OfferType) {
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
-        <h2 className="place-card__name">
-          <Link to={`/offer/${offer.id}`}/>{offer.title}
-        </h2>
+        <Link to={`/offer/${offer.id}`}>
+          <h2 className="place-card__name">
+            {offer.title}
+          </h2>
+        </Link>
         <p className="place-card__type">{offer.type}</p>
       </div>
     </article>
