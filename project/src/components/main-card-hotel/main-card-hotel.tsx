@@ -4,12 +4,12 @@ import { calculateRating } from '../../utils';
 
 type OfferType = {
  offer:Offer;
- onMouseEnter: (id:number) => void;
+ onMouseEnter: (offer:Offer) => void;
 }
 
 function MainCardHotel({offer,onMouseEnter}:OfferType) : JSX.Element{
   return (
-    <article className="cities__card place-card" onMouseEnter={()=> onMouseEnter(offer.id)}>
+    <article className="cities__card place-card" onMouseEnter={()=> onMouseEnter(offer)}>
       {offer.isPremium &&
       <div className="place-card__mark">
         <span>Premium</span>

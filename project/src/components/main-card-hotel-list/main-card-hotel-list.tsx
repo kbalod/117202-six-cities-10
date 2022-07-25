@@ -1,24 +1,18 @@
-import { useState } from 'react';
-import { Offers} from '../../types/offers';
+import { Offer, Offers} from '../../types/offers';
 import { MainCardHotel } from '../../components/main-card-hotel/main-card-hotel';
 
 
 type OfferScreenProps = {
   offers:Offers;
+  onfocus: (offer:Offer) => void;
 }
 
 
-function MainCardHotelList({offers}:OfferScreenProps) : JSX.Element {
-  const [activeCard,setActiveCard] = useState(0);
-
-  const handlerOnFocus = (id:number) => {
-    setActiveCard(id);
-    console.log(activeCard);
-  };
+function MainCardHotelList({offers,onfocus}:OfferScreenProps) : JSX.Element {
   return(
     <>
       {offers.map((offer)=>
-        (<MainCardHotel key={offer.id} offer={offer} onMouseEnter={handlerOnFocus}/>))}
+        (<MainCardHotel key={offer.id} offer={offer} onMouseEnter={onfocus}/>))}
     </>
   );
 }
