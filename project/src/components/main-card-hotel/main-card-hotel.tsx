@@ -42,7 +42,7 @@ function CardHotel({offer,onMouseEnter,cardHotelType}:OfferType) : JSX.Element{
         <h2 className="place-card__name">
           <Link to={`/offer/${offer.id}`}>{offer.title}</Link>
         </h2>
-        <p className="place-card__type">{offer.price}</p>
+        <p className="place-card__type">{offer.type}</p>
       </div>
     </>
   );
