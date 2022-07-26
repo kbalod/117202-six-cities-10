@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
+import { comments } from './components/mocks/comments';
 import { offers } from './components/mocks/offers';
 
 const root = ReactDOM.createRoot(
@@ -8,6 +9,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <App
-    offers ={offers}
+    offers ={offers} comments={comments}
   />
 );

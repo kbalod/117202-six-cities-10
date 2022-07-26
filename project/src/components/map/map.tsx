@@ -8,6 +8,7 @@ import { Offers,Offer } from '../../types/offers';
 type MapOffers = {
   offers:Offers;
   activePoint: Offer | null;
+  typeMapMain: boolean;
 };
 
 const defaultCustomIcon = new Icon({
@@ -22,7 +23,7 @@ const currentCustomIcon = new Icon({
   iconAnchor: [20, 40]
 });
 
-function Map({offers,activePoint}: MapOffers): JSX.Element {
+function Map({offers,activePoint,typeMapMain}: MapOffers): JSX.Element {
 
   const mapRef = useRef(null);
   const map = useMap(mapRef, offers);
@@ -46,9 +47,14 @@ function Map({offers,activePoint}: MapOffers): JSX.Element {
 
     }
   }, [map, offers, activePoint]);
-
+  if(typeMapMain){
+    return (
+      <section className="cities__map map" ref={mapRef} >
+      </section>
+    );
+  }
   return (
-    <section className="cities__map map" ref={mapRef} >
+    <section className="property__map map" ref={mapRef} >
     </section>
   );
 }

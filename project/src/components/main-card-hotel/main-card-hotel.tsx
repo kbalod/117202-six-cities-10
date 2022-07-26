@@ -4,17 +4,18 @@ import { calculateRating } from '../../utils';
 
 type OfferType = {
  offer:Offer;
- onMouseEnter: (offer:Offer) => void;
+ onMouseEnter?: (offer:Offer) => void;
+ cardHotelType: string;
 }
 
-function MainCardHotel({offer,onMouseEnter}:OfferType) : JSX.Element{
+function CardHotel({offer,onMouseEnter,cardHotelType}:OfferType) : JSX.Element{
   return (
-    <article className="cities__card place-card" onMouseEnter={()=> onMouseEnter(offer)}>
+    <>
       {offer.isPremium &&
       <div className="place-card__mark">
         <span>Premium</span>
       </div>}
-      <div className="cities__image-wrapper place-card__image-wrapper">
+      <div className={`${cardHotelType}__image-wrapper place-card__image-wrapper`} onMouseEnter={()=>{ if(onMouseEnter !== undefined){onMouseEnter(offer);}}}>
         <Link to={`/offer/${offer.id}`}>
           <img className="place-card__image" src={offer.previewImage} width="260" height="200" alt="Place"/>
         </Link>
@@ -43,7 +44,8 @@ function MainCardHotel({offer,onMouseEnter}:OfferType) : JSX.Element{
         </h2>
         <p className="place-card__type">{offer.price}</p>
       </div>
-    </article>
+    </>
   );
 }
-export{MainCardHotel};
+
+export default CardHotel;

@@ -8,13 +8,15 @@ import RoomScreen from '../../pages/room-screen/room-screen';
 import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
 import { Offers} from '../../types/offers';
+import { Comments } from '../../types/comments';
 
 
 type AppScreenProps = {
   offers: Offers;
+  comments:Comments;
 }
 
-function App({offers}: AppScreenProps): JSX.Element {
+function App({offers,comments}: AppScreenProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
@@ -28,7 +30,7 @@ function App({offers}: AppScreenProps): JSX.Element {
         />
         <Route
           path={AppRoute.Room}
-          element={<RoomScreen/>}
+          element={<RoomScreen comments ={comments}/>}
         />
         <Route
           path={AppRoute.Favorites}

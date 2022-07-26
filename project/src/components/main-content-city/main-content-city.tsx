@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Offers,Offer } from '../../types/offers';
-import { MainCardHotelList } from '../main-card-hotel-list/main-card-hotel-list';
+import CardHotelList from '../card-hotel-list/card-hotel-list';
 import Map from '../map/map';
 
 type MainContentType = {
@@ -36,11 +36,11 @@ function MainContentCity({offers}: MainContentType) : JSX.Element {
             </ul>
           </form>
           <div className="cities__places-list places__list tabs__content">
-            <MainCardHotelList offers={offers} onfocus={handlerOnFocus}/>
+            <CardHotelList offers={offers} onMouseEnter={handlerOnFocus} cardHotelType={'city'}/>
           </div>
         </section>
         <div className="cities__right-section">
-          <Map offers={offers} activePoint={activePoint} />
+          <Map offers={offers} activePoint={activePoint} typeMapMain/>
         </div>
       </div>
     </div>
