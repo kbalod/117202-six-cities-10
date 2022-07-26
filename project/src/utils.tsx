@@ -9,3 +9,5 @@ export function calculateRating (rating:number) {
 export function humanizeDate (data: string) {
   return dayjs(data).format('MMMM-YYYY');
 }
+
+//тест
