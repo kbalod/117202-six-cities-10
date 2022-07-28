@@ -1,5 +1,5 @@
 import {Route, BrowserRouter, Routes} from 'react-router-dom';
-import {AppRoute, AuthorizationStatus} from '../../types/const';
+import {AppRoute, AuthorizationStatus} from '../../const';
 
 import MainScreen from '../../pages/main-screen/main-screen';
 import FavoritesScreen from '../../pages/favorites-screen/favorites-screen';
@@ -7,19 +7,22 @@ import LoginScreen from '../../pages/login-screen/login-screen';
 import RoomScreen from '../../pages/room-screen/room-screen';
 import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
+import { Offers} from '../../types/offers';
+import { Comments } from '../../types/comments';
 
 
 type AppScreenProps = {
-  countCard : number
+  offers: Offers;
+  comments:Comments;
 }
 
-function App({countCard}: AppScreenProps): JSX.Element {
+function App({offers,comments}: AppScreenProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={AppRoute.Main}
-          element={<MainScreen countCard={countCard} />}
+          element={<MainScreen offers={offers}/>}
         />
         <Route
           path={AppRoute.Login}
@@ -27,7 +30,7 @@ function App({countCard}: AppScreenProps): JSX.Element {
         />
         <Route
           path={AppRoute.Room}
-          element={<RoomScreen/>}
+          element={<RoomScreen comments ={comments}/>}
         />
         <Route
           path={AppRoute.Favorites}
@@ -35,7 +38,7 @@ function App({countCard}: AppScreenProps): JSX.Element {
             <PrivateRoute
               authorizationStatus={AuthorizationStatus.NoAuth}
             >
-              <FavoritesScreen />
+              <FavoritesScreen offers={offers}/>
             </PrivateRoute>
           }
         />
