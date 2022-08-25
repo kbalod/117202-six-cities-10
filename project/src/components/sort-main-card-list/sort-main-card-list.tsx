@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { SortType } from '../../const';
 import SortOptionList from '../sort-option-list/sort-option-list';
+import { SortType } from '../../const';
 
 type SortListType = {
   sortType:string;

@@ -1,6 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useAppSelector } from '../../hooks/useAppSelector/useAppSelector';
+import { getAuthorizationStatus } from '../../store/user-data/selectors';
+import HeaderAuthorized from '../header-authorized/header-authorized';
+import HeaderNotAuthorized from '../header-not-authorized/header-not-authorized';
+import { AuthorizationStatus } from '../../types/const';
 
 function Header (): JSX.Element {
+  const authorizationStatus = useAppSelector(getAuthorizationStatus);
+  const authorization = authorizationStatus === AuthorizationStatus.NoAuth || authorizationStatus === AuthorizationStatus.Unknown;
   return(
     <header className="header">
       <div className="container">
@@ -11,22 +18,10 @@ function Header (): JSX.Element {
             </Link>
           </div>
           <nav className="header__nav">
-            <ul className="header__nav-list">
-              <li className="header__nav-item user">
-                <Link to={'/'} className="header__nav-link header__nav-link--profile">
-                  <div className="header__avatar-wrapper user__avatar-wrapper">
-                  </div>
-                </Link>
-                <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
-                <span className="header__favorite-count">3</span>
-
-              </li>
-              <li className="header__nav-item">
-                <Link to={'/'} className="header__nav-link">
-                  <span className="header__signout">Sign out</span>
-                </Link>
-              </li>
-            </ul>
+            {(authorization ?
+              <HeaderNotAuthorized/>
+              :
+              <HeaderAuthorized/>)}
           </nav>
         </div>
       </div>

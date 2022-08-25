@@ -2,9 +2,13 @@ import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
 import { Provider } from 'react-redux';
 import { store } from './store';
-import { comments } from './components/mocks/comments';
-import { offers } from './components/mocks/offers';
+import { checkAuthAction, fetchFavoritesAction, fetchOffersAction } from './store/api-action';
+import HistoryRouter from './components/history-route/history-route';
+import browserHistory from './service/browse-history';
 
+store.dispatch(fetchOffersAction());
+store.dispatch(fetchFavoritesAction());
+store.dispatch(checkAuthAction());
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -12,9 +16,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <Provider store={store}>
-    <App
-      offers ={offers} comments={comments}
-    />
+    <HistoryRouter history={browserHistory}>
+      <App/>
+    </HistoryRouter>
   </Provider>
-
 );

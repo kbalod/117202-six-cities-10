@@ -13,6 +13,11 @@ export type Comment ={
     user: User
   };
 
+export type UserComment ={
+  comment: string
+  rating: number
+  id: number
+}
 export type Comments = Comment[];
 
 
