@@ -16,10 +16,10 @@ function FavoritesScreen (){
       <main className="page__main page__main--favorites">
         <div className="page__favorites-container container">
 
-            {favoriteOffers.length ?
-              <FavoriteList favoriteOffers={favoriteOffers} cities={cities} />
-              :
-              <FavoritesEmpty/>}
+          {favoriteOffers.length ?
+            <FavoriteList favoriteOffers={favoriteOffers} cities={cities} />
+            :
+            <FavoritesEmpty/>}
         </div>
       </main>
       <footer className="footer container">

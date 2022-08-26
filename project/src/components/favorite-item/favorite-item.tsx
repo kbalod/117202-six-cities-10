@@ -12,8 +12,9 @@ function FavoriteItem({offers,city}:Favorite) {
     <li className="favorites__locations-items">
       <div className="favorites__locations locations locations--current">
         <div className="locations__item">
-          <Link to={''} className="locations__item-link" />
-          <span>{city}</span>
+          <Link to={'/favorites'} className="locations__item-link">
+            <span>{city}</span>
+          </Link>
         </div>
       </div>
       <div className="favorites__places">
