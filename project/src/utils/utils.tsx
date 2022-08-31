@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
-import { ONE_STAR, SortType } from './const';
-import { Comment } from './types/comments';
-import { AuthorizationStatus } from './types/const';
-import { Offer, Offers } from './types/offers';
+import { ONE_STAR, SortType } from '../const';
+import { Comment } from '../types/comments';
+import { AuthorizationStatus } from '../types/const';
+import { Offer, Offers } from '../types/offers';
 
 export function calculateRating (rating:number) {
   const result = Math.round(rating) * ONE_STAR;

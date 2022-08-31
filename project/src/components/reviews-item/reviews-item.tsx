@@ -1,5 +1,5 @@
 import { Comment } from '../../types/comments';
-import { calculateRating, humanizeDate } from '../../utils';
+import { calculateRating, humanizeDate } from '../../utils/utils';
 
 type CommentType = {
   comment:Comment

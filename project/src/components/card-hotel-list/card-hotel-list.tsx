@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Offer, Offers} from '../../types/offers';
-import { getSortedOffers } from '../../utils';
+import { getSortedOffers } from '../../utils/utils';
 import CardHotel from '../main-card-hotel/main-card-hotel';
 
 

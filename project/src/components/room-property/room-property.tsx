@@ -5,7 +5,7 @@ import { fetchAddToFavoritesAction} from '../../store/api-action';
 import { getComments } from '../../store/offer-data/selectors';
 import { getAuthorizationStatus } from '../../store/user-data/selectors';
 import ReviewsList from '../reviews-list/reviews-list';
-import { calculateRating } from '../../utils';
+import { calculateRating } from '../../utils/utils';
 import { Offer } from '../../types/offers';
 import { AuthorizationStatus } from '../../types/const';
 import { AppRoute, MAX_IMAGE_COUNT, MIN_IMAGE_COUNT } from '../../const';
@@ -58,7 +58,7 @@ function RoomProperty ({room}:Room) : JSX.Element {
               type="button"
               onClick={handleFavoriteButtonClick}
             >
-              <svg className="property__bookmark-icon" width="31" height="33">
+              <svg className="place-card__bookmark-icon" width="31" height="33">
                 <use xlinkHref="#icon-bookmark"></use>
               </svg>
               <span className="visually-hidden">To bookmarks</span>

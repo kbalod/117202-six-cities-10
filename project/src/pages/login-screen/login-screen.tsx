@@ -79,6 +79,9 @@ function LoginScreen () {
                   type="password"
                   name="password"
                   placeholder="Password"
+                  pattern="(?=.*[0-9])(?=.*[a-zA-Z]).{2,}$"
+                  title="
+                  Password must be at least 1 number and 1 letter"
                   required
                 />
               </div>

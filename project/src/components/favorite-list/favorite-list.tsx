@@ -1,7 +1,7 @@
 
 import { City } from '../../types/const';
 import { Offers } from '../../types/offers';
-import { getOffersByCity } from '../../utils';
+import { getOffersByCity } from '../../utils/utils';
 import FavoriteItem from '../favorite-item/favorite-item';
 
 type Favorite = {

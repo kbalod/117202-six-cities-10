@@ -1,6 +1,6 @@
 import { Offer} from '../../types/offers';
 import {Link, useNavigate, useParams} from 'react-router-dom';
-import { calculateRating } from '../../utils';
+import { calculateRating } from '../../utils/utils';
 import { AuthorizationStatus } from '../../types/const';
 import { useAppSelector } from '../../hooks/useAppSelector/useAppSelector';
 import { getAuthorizationStatus } from '../../store/user-data/selectors';

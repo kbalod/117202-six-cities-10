@@ -2,7 +2,7 @@ import { useAppSelector } from '../../hooks/useAppSelector/useAppSelector';
 import { getAuthorizationStatus } from '../../store/user-data/selectors';
 import FormComment from '../form-comment/form-comment';
 import ReviewsItem from '../reviews-item/reviews-item';
-import { sortRecentToOld } from '../../utils';
+import { sortRecentToOld } from '../../utils/utils';
 import { Comments } from '../../types/comments';
 import { AuthorizationStatus } from '../../types/const';
 import { CommentValue } from '../../const';

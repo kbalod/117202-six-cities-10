@@ -1,4 +1,4 @@
-import { getTitle } from '../../utils';
+import { getTitle } from '../../utils/utils';
 
 type FormRatingProps = {
     index: number;

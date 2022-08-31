@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks';
 import { fetchAddToFavoritesAction } from '../../store/api-action';
 import { Offer } from '../../types/offers';
-import { calculateRating } from '../../utils';
+import { calculateRating } from '../../utils/utils';
 
 type OfferType = {
   offer:Offer;

@@ -10,12 +10,17 @@ import RoomScreen from '../../pages/room-screen/room-screen';
 import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
 import LoadingScreen from '../../pages/loading-screen/loading-screen';
+import { getOfferDataError } from '../../store/errors-data/selectors';
+import ServerError from '../../pages/server-error/server-error';
 
 function App(): JSX.Element {
   const authorizationStatus = useAppSelector(getAuthorizationStatus);
   const isDataLoaded = useAppSelector(getDataLoadedStatus);
+  const offersDataError = useAppSelector(getOfferDataError);
 
-  if (!isDataLoaded) {
+  if (offersDataError) {
+    return (<ServerError />);
+  } else if (!isDataLoaded) {
     return (
       <LoadingScreen />
     );

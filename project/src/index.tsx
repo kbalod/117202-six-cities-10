@@ -3,7 +3,7 @@ import App from './components/app/app';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { checkAuthAction, fetchFavoritesAction, fetchOffersAction } from './store/api-action';
-import HistoryRouter from './components/history-route/history-route';
+import HistoryRouter from './components/history-router/history-router';
 import browserHistory from './service/browse-history';
 
 store.dispatch(fetchOffersAction());
